@@ -2,36 +2,56 @@
 
 # 🔄 Fork Sync
 
-**Keep your GitHub fork up to date automatically.**
+### Your fork. Always up to date.
 
-Create a GitHub Actions workflow that syncs your fork from its upstream repository on a schedule you choose.
+Generate a GitHub Actions workflow to bring upstream changes into your fork automatically.
+
+<br />
+
+## 🚀 [Open the live app](https://shaurya-singhal-2006.github.io/FORK-REPO-AUTO-FETCH/)
 
 </div>
 
+---
+
 ## 💡 What it does
 
-Fork Sync generates a ready-to-use workflow file for your repository. GitHub Actions then brings changes from the original repository into your fork on your schedule, with an option to run a sync manually.
+Fork Sync creates a ready-to-use workflow for a repository you forked. Choose the upstream repository, branch, and sync schedule; then add the generated file to your fork. GitHub Actions handles future updates, and you can also start a sync manually.
 
-## 🧭 Setup steps
+```text
+Original repository  →  Your fork  →  Automatic updates
+```
 
-1. 🔎 Enter the upstream repository as `owner/repo`, such as `facebook/react`.
-2. 🌿 Choose the branch to sync and a schedule, such as `main` every 12 hours. GitHub schedule times use UTC.
-3. 🛡️ Choose optional settings: force sync can discard commits on a diverged branch; a personal access token is needed when syncing changes to workflow files.
+## 🧭 Set it up
+
+1. 🔎 Enter the upstream repository as `owner/repo` — for example, `facebook/react`.
+2. 🌿 Select the branch and how often to sync. GitHub schedule times use UTC.
+3. 🛡️ Choose any options you need:
+   - **Force sync** can discard commits made directly on a diverged branch.
+   - **Workflow file access** uses a personal access token when upstream changes include `.github/workflows` files.
 4. 📋 Copy the generated YAML or download `sync-fork.yml`.
-5. 🗂️ In your fork, create `.github/workflows/sync-fork.yml`, paste the YAML, and commit the file.
-6. ⚡ Open the fork’s **Actions** tab. Enable workflows if GitHub asks, then select **Sync Fork → Run workflow** to try it.
-7. 🎉 Done! GitHub will sync your fork automatically on the chosen schedule.
+5. 🗂️ In your fork, create `.github/workflows/sync-fork.yml`, paste the YAML, and commit it.
+6. ⚡ Open the fork’s **Actions** tab and enable workflows if GitHub asks. Then choose **Sync Fork → Run workflow** to test it.
+7. 🎉 That’s it! Your fork will sync on the selected schedule.
 
 ## 🧪 Example
 
-To keep a fork of React’s `main` branch updated every 12 hours, use:
+To keep a fork of React’s `main` branch up to date twice a day:
 
-| Setting | Example |
+| Choose | Value |
 | --- | --- |
 | Upstream repository | `facebook/react` |
 | Branch | `main` |
-| Sync frequency | Every 12 hours |
+| Schedule | Every 12 hours |
 | Force sync | Off |
 | Personal access token | Off |
 
-Generate the workflow, save it as `.github/workflows/sync-fork.yml` in your fork, and enable it in **Actions**. The first run can be started manually; future runs follow the schedule.
+The generated workflow goes in **`.github/workflows/sync-fork.yml`**. Commit it to your fork, enable it in **Actions**, and run **Sync Fork** once to try it out.
+
+---
+
+<div align="center">
+
+✨ Less manual syncing. More time building. ✨
+
+</div>
